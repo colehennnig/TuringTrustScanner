@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "TuringTrustScanner",
+    "name": "Turing Trust Scanner",
     "slug": "TuringTrustScanner",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,16 +17,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.coleslaw827.TuringTrustScanner"
     },
     "android": {
-      "adaptiveIcon": {
+      "package": "com.turingtrustscanner.turingtrustscanner",
+      "adaptiveIcon": { 
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "backgroundColor": "#ffffff" 
       }
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e8c83489-ae3a-4ba4-b90e-e6a7cc4cee79"
+      }
     }
   }
 }
