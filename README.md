@@ -92,9 +92,7 @@ You can configure some of Create React Native App's behavior using environment v
 When starting your project, you'll see something like this for your project URL:
 
 ```
-
 exp://192.168.0.2:19000
-
 ```
 
 The "manifest" at that URL tells the Expo app how to retrieve and load your app's JavaScript bundle, so even if you load it in the app via a URL like `exp://localhost:19000`, the Expo client app will still try to retrieve your app at the IP address that the start script provides.
@@ -104,19 +102,14 @@ In some cases, this is less than ideal. This might be the case if you need to ru
 Mac and Linux:
 
 ```
-
 REACT_NATIVE_PACKAGER_HOSTNAME='my-custom-ip-address-or-hostname' npm start
-
 ```
 
 Windows:
 
 ```
-
 set REACT_NATIVE_PACKAGER_HOSTNAME='my-custom-ip-address-or-hostname'
-
 npm start
-
 ```
 
 The above example would cause the development server to listen on `exp://my-custom-ip-address-or-hostname:19000`.
@@ -131,25 +124,19 @@ If you're unable to load your app on your phone due to a network timeout or a re
 Try opening a web browser on your phone and opening the URL that the packager script prints, replacing `exp://` with `http://`. So, for example, if underneath the QR code in your terminal you see:
 
 ```
-
 exp://192.168.0.1:19000
-
 ```
 
 Try opening Safari or Chrome on your phone and loading
 
 ```
-
 http://192.168.0.1:19000
-
 ```
 
 and
 
 ```
-
 http://192.168.0.1:19001
-
 ```
 
 If this works, but you're still unable to load your app by scanning the QR code, please open an issue on the [Create React Native App repository](https://github.com/react-community/create-react-native-app) with details about these steps and any other error messages you may have received.
