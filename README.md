@@ -13,12 +13,12 @@ Hopefully this can be of help to understand what is needed and how we can build 
 Here are some screenshots of the app in use.
 
 <p align="center" width="100%">
-  <img src="./assets/screenshots/IMG_5096.PNG" width="15%"/>
-  <img src="./assets/screenshots/IMG_5097.PNG" width="15%"/>
-  <img src="./assets/screenshots/IMG_5098.PNG" width="15%"/>
-  <img src="./assets/screenshots/IMG_5100.PNG" width="15%"/>
-  <img src="./assets/screenshots/IMG_5101.PNG" width="15%"/>
-  <img src="./assets/screenshots/IMG_5102.PNG" width="15%"/>
+  <img src="./assets/screenshots/IMG_5096.PNG" width="16%"/>
+  <img src="./assets/screenshots/IMG_5097.PNG" width="16%"/>
+  <img src="./assets/screenshots/IMG_5098.PNG" width="16%"/>
+  <img src="./assets/screenshots/IMG_5100.PNG" width="16%"/>
+  <img src="./assets/screenshots/IMG_5101.PNG" width="16%"/>
+  <img src="./assets/screenshots/IMG_5102.PNG" width="16%"/>
 </p>
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
