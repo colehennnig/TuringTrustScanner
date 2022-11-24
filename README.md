@@ -1,4 +1,6 @@
-![logo](./assets/readmelogo.png)
+<p align="center" width="100%">
+  <img src="./assets/readmelogo.png" width="30%"/>
+</p>
 
 # Turing Trust Scanner
 This project was started by Cole Hennig. This application originally aimed to help automate the process of uploading asset information to a google sheet that helps keep track of who worked on which assests and what action each asset needs next. The goal for the application was to have easy to fill in text fields with shortcut buttons and a way to scan asset number barcodes for the asset field. The application will then be able to upload that information to a google sheet. With the current build, this has all been successfully completed. The android build can be downloaded [here](https://expo.dev/accounts/coleslaw827/projects/TuringTrustScanner/builds/a18c436a-b482-4fda-8d7a-e01c121453d0). Hopefully this can be of help to understand what is needed and how we can build from here.
