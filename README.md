@@ -1,4 +1,5 @@
 ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 ![Expo](https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37)
 ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
@@ -38,7 +39,7 @@ Below you'll find information about performing common tasks.
   * [npm start](#npm-start)
   * [npm run android](#npm-run-android)
   * [eas build](#eas-build)
-* [Writing and Running Tests](#writing-and-running-tests)
+* [Dependencies](#dependencies)
 * [Environment Variables](#environment-variables)
   * [Configuring Packager IP Address](#configuring-packager-ip-address)
 * [Customizing App Display Name and Icon](#customizing-app-display-name-and-icon)
@@ -100,6 +101,33 @@ This script is necessary for deploying the current build of the app to the [Expo
 ```
 eas build -p android --clear-cache --profile preview
 ```
+
+## Dependencies
+
+Install by running:
+
+```
+npm install <package name>
+```
+
+ * `@react-native-async-storage/async-storage`
+ * `@react-navigation/core`
+ * `@react-navigation/native`
+ * `@react-navigation/native-stack`
+ * `axios`
+ * `expo`
+ * `expo-barcode-scanner`
+ * `expo-status-bar`
+ * `expo-updates`
+ * `logcat`
+ * `react`
+ * `react-dom`
+ * `react-native`
+ * `react-native-paper`
+ * `react-native-safe-area-context`
+ * `react-native-screens`
+ * `react-native-web`
+ * `sheetdb-node`
 
 ##  Customizing App Display Name and Icon
 
