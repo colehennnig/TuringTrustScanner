@@ -4,6 +4,8 @@
 ![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 
+- - -
+
 <p align="center" width="100%">
   <img src="./assets/readmelogo.png" width="20%"/>
 </p>
