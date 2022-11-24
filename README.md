@@ -1,8 +1,8 @@
-![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=white)
+![React Native](https://img.shields.io/badge/react_native-%1C1E242a.svg?style=for-the-badge&logo=react&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%1C1E2430.svg?style=for-the-badge&logo=javascript&logoColor=white)
 ![Expo](https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=white)
-![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)
-![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
+![NPM](https://img.shields.io/badge/NPM-%1C1E2400.svg?style=for-the-badge&logo=npm&logoColor=white)
+![Android](https://img.shields.io/badge/Android-1C1E24?style=for-the-badge&logo=android&logoColor=white)
 - - -
 
 <p align="left" width="100%">
