@@ -5,7 +5,7 @@
 ![Android](https://img.shields.io/badge/Android-3DDC84?style=for-the-badge&logo=android&logoColor=white)
 - - -
 
-<p align="center" width="100%">
+<p align="left" width="100%">
   <img src="./assets/readmelogo.png" width="20%"/>
 </p>
 
