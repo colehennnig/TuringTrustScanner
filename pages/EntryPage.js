@@ -15,6 +15,7 @@ import {
   Linking,
   Vibration,
 } from "react-native";
+import AsyncStorage from "@react-native-async-storage/async-storage"
 import { useNavigation } from "@react-navigation/core";
 import { ToggleButton } from "react-native-paper";
 import axios from "axios";
@@ -32,7 +33,7 @@ export default function EntryPage({ route }) {
   const day = date.getDate();
   const month = date.getMonth() + 1;
   const year = date.getFullYear();
-  const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbwXeiIgm_OITHCuAnu2-VtPrJngzGEitYn-WbT3o_KP2Jkl-do72Zt1g-7ys8J3dr7FgQ/exec';
+  const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbwSTWH1DtapgasmuR_OKVkOgil0U-dzoiCKmqCCuw6M8tpn6C14W9v9hvnVMHzFQ7Qx5g/exec';
 
   //=========================================================================//
   // useEffect:
@@ -43,7 +44,26 @@ export default function EntryPage({ route }) {
   useEffect(() => {
     const { asset } = route.params;
     setAssetNumber(asset);
+    getUsername();
   }, [route])
+
+  //=========================================================================//
+  // setUsername:
+  //-------------------------------------------------------------------------//
+  // Saves the user's name to local storage.
+  //=========================================================================//
+  const setUsername = (value) => {
+    AsyncStorage.setItem('username', value).then(() => console.log('Username set'))
+  }
+  
+  //=========================================================================//
+  // getUsername:
+  //-------------------------------------------------------------------------//
+  // Sets the name input field to the user's name saved in local storage.
+  //=========================================================================//
+  const getUsername = () => {
+    AsyncStorage.getItem('username').then((value) => setName(value))
+  }
 
   //=========================================================================//
   // submitAlert:
@@ -120,12 +140,15 @@ export default function EntryPage({ route }) {
   // Look at the Google Sheet Apps Script for further information.
   //=========================================================================//
   const addSheet = () => {
-    axios({
-      url: `${googleScriptUrl}?name=${name}&date=${day}%2F${month}%2F${year}&assetNumber=${assetNumber}&color=${color}&method=addSheet`,
-      method: 'GET'
-    })
-    clear();
-    Alert.alert("Sheets and Information Added","",[{text:"Okay",style:"default"}]);
+    const url = `${googleScriptUrl}?name=${name}&date=${day}%2F${month}%2F${year}&assetNumber=${assetNumber}&color=${color}&method=addSheet`;
+    axios
+      .post(url)
+      .then((res) => {
+        console.log(res.data);
+        clear();
+        Alert.alert("Sheets and Information Added","",[{text:"Okay",style:"default"}]);
+      })
+      .catch((err) => console.log(err))
   }
 
   //=========================================================================//
@@ -138,20 +161,20 @@ export default function EntryPage({ route }) {
   // Look at the Google Sheet Apps Script for further information.
   //=========================================================================//
   const submit = () => {
-    axios({
-      url: `${googleScriptUrl}?name=${name}&date=${day}%2F${month}%2F${year}&assetNumber=${assetNumber}&color=${color}&method=addData`,
-      method: 'GET'
-    }).then((response) => {
-      // handle success
-      console.log(response.data);
-      if (response.data.status == 404) {
-        Vibration.vibrate([0,200,200,200], false);
-        noSheetAlert();
-      } else {
-        clear();
-        Alert.alert("Information Added","",[{text:"Okay",style:"default"}]);
-      }
-    })
+    const url = `${googleScriptUrl}?name=${name}&date=${day}%2F${month}%2F${year}&assetNumber=${assetNumber}&color=${color}&method=addData`;
+    axios
+      .post(url)
+      .then((res) => {
+        console.log(res.data);
+        if (res.data.status == 404) {
+          Vibration.vibrate([0,200,200,200], false);
+          noSheetAlert();
+        } else {
+          clear();
+          Alert.alert("Information Added","",[{text:"Okay",style:"default"}]);
+        }
+      })
+      .catch((err) => console.log(err))
   }
 
   //=========================================================================//
@@ -160,6 +183,7 @@ export default function EntryPage({ route }) {
   // Clears all the text fields except the user's name for ease of use.
   //=========================================================================//
   const clear = () => {
+    setUsername(name);
     setAssetNumber("");
     setColor("");
     Vibration.vibrate(200, false);

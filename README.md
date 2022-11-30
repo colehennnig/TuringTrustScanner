@@ -37,7 +37,7 @@ Below you'll find information about performing common tasks.
 
 * [Updating to New Releases](#updating-to-new-releases)
 * [Available Scripts](#available-scripts)
-  * [npm start](#npm-start)
+  * [expo start](#expo-start)
   * [npm run android](#npm-run-android)
   * [eas build](#eas-build)
 * [Dependencies](#dependencies)
@@ -59,7 +59,7 @@ Upgrading to a new version of React Native requires updating the `react-native`,
 
 ##  Available Scripts
 
-###  `npm start`
+###  `expo start`
 
 Runs your app in development mode.
 
@@ -68,13 +68,13 @@ Open it in the [Expo app](https://expo.io) on your phone to view it. It will rel
 Sometimes the Expo app will fail to connect to the metro server. A fix that is usually very reliable is running `npm start` with the `--tunnel` flag.
 
 ```
-npm start --tunnel
+expo start --tunnel
 ```
 
 Sometimes you may need to reset or clear the React Native packager's cache. To do so, you can pass the `--reset-cache` flag to the start script:
 
 ```
-npm start --reset-cache
+expo start --reset-cache
 ```
 
 ####  `npm run android`
