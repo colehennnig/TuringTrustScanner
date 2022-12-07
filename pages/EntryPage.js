@@ -133,13 +133,10 @@ export default function EntryPage({ route }) {
   }
 
   //=========================================================================//
-  // noSheetAlert:
+  // duplicateEntryAlert:
   //-------------------------------------------------------------------------//
-  // Prompted when the application recieves and 404 error from the Google
+  // Prompted when the application recieves and 400 error from the Google
   // Apps Script.
-  // Allows the user to automatically add the appropriate sheets to the
-  // main spreadheet or ignore the warning in case the user thinks they
-  // have made a mistake.
   //=========================================================================//
   const duplicateEntryAlert = (type) => {
     Alert.alert(
