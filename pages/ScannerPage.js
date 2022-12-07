@@ -36,9 +36,13 @@ export default function App() {
   // the scanned asset number.
   //=========================================================================//
   const handleBarCodeScanned = ({ type, data }) => {
-    Vibration.vibrate(200,false);
-    setScanned(true);
-    navigation.navigate("Entry", {asset: data});
+    if (data.length == 8) {
+      Vibration.vibrate(200,false);
+      setScanned(true);
+      navigation.navigate("Entry", {asset: data});
+    } else {
+      Vibration.vibrate([0,200,100,200], false);
+    }
   };
 
   if (hasPermission === null) {
@@ -53,19 +57,22 @@ export default function App() {
       style={{
         flex: 1,
         flexDirection: 'column',
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}>
       <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
         style={[StyleSheet.absoluteFillObject, styles.container]}>
-        <Text style={styles.description}>Scan Asset Number</Text>
+        {/* <Text style={styles.description}>Scan Asset Number</Text>
         <View
           style={styles.qr}
-        />
-        <Text onPress={() => navigation.navigate("Entry", {asset: ""})} style={styles.cancel}>
+        /> */}
+        
+        <Image source={require('../assets/Scan.png')} style={{width: width, height: height, position: 'absolute'}}/>
+      </BarCodeScanner>
+      <Text onPress={() => navigation.navigate("Entry", {asset: ""})} style={styles.cancel}>
           Cancel
         </Text>
-      </BarCodeScanner>
       {scanned && (
         <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />
       )}
@@ -78,7 +85,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    paddingTop: Constants.statusBarHeight,
     backgroundColor: '#ecf0f1',
     padding: 8,
   },
@@ -103,5 +109,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     width: '40%',
     color: 'white',
+    position: 'absolute',
+    top: '66%'
   },
 });

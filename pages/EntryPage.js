@@ -29,10 +29,12 @@ export default function EntryPage({ route }) {
 
   // Global Variables
   const navigation = useNavigation();
-  const date = new Date();
-  const day = date.getDate();
-  const month = date.getMonth() + 1;
-  const year = date.getFullYear();
+  const today = new Date();
+  const date = today.getDate();
+  const day = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][today.getDay()]
+  const month = today.getMonth() + 1;
+  const year = today.getFullYear();
+  const dateString = `${date}/${month}/${year}, ${day}`
   const googleScriptUrl = 'https://script.google.com/macros/s/AKfycbwSTWH1DtapgasmuR_OKVkOgil0U-dzoiCKmqCCuw6M8tpn6C14W9v9hvnVMHzFQ7Qx5g/exec';
 
   //=========================================================================//
@@ -131,6 +133,28 @@ export default function EntryPage({ route }) {
   }
 
   //=========================================================================//
+  // noSheetAlert:
+  //-------------------------------------------------------------------------//
+  // Prompted when the application recieves and 404 error from the Google
+  // Apps Script.
+  // Allows the user to automatically add the appropriate sheets to the
+  // main spreadheet or ignore the warning in case the user thinks they
+  // have made a mistake.
+  //=========================================================================//
+  const duplicateEntryAlert = (type) => {
+    Alert.alert(
+      "Duplicate Entry",
+      "This asset number was already entered.",
+      [
+        {
+          text: "Okay",
+          style: "default"
+        }
+      ]
+    )
+  }
+
+  //=========================================================================//
   // addSheet:
   //-------------------------------------------------------------------------//
   // Handles the url post to add the new sheets for the user.
@@ -140,7 +164,7 @@ export default function EntryPage({ route }) {
   // Look at the Google Sheet Apps Script for further information.
   //=========================================================================//
   const addSheet = () => {
-    const url = `${googleScriptUrl}?name=${name}&date=${day}%2F${month}%2F${year}&assetNumber=${assetNumber}&color=${color}&method=addSheet`;
+    const url = `${googleScriptUrl}?name=${name}&date=${dateString}&assetNumber=${assetNumber}&color=${color}&method=addSheet`;
     axios
       .post(url)
       .then((res) => {
@@ -161,7 +185,7 @@ export default function EntryPage({ route }) {
   // Look at the Google Sheet Apps Script for further information.
   //=========================================================================//
   const submit = () => {
-    const url = `${googleScriptUrl}?name=${name}&date=${day}%2F${month}%2F${year}&assetNumber=${assetNumber}&color=${color}&method=addData`;
+    const url = `${googleScriptUrl}?name=${name}&date=${dateString}&assetNumber=${assetNumber}&color=${color}&method=addData`;
     axios
       .post(url)
       .then((res) => {
@@ -169,6 +193,9 @@ export default function EntryPage({ route }) {
         if (res.data.status == 404) {
           Vibration.vibrate([0,200,200,200], false);
           noSheetAlert();
+        } else if (res.data.status == 400) {
+          Vibration.vibrate([0,200,200,200], false);
+          duplicateEntryAlert();
         } else {
           clear();
           Alert.alert("Information Added","",[{text:"Okay",style:"default"}]);
@@ -195,6 +222,7 @@ export default function EntryPage({ route }) {
   // Opens the Scan Page.
   //=========================================================================//
   const scan = () => {
+    setUsername(name);
     navigation.navigate("Scanner");
   }
 
