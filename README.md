@@ -6,7 +6,7 @@
 - - -
 
 <p align="left" width="100%">
-  <img src="./assets/appIcon.png" width="20%"/>
+  <img src="./assets/appIcon.png" width="20%" min-width=200/>
 </p>
 
 # Turing Trust Scanner
