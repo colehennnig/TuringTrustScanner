@@ -18,7 +18,7 @@ Hopefully this can be of help to understand what is needed and how we can build 
 
 Here is a video of the app in use.
 
-
+https://user-images.githubusercontent.com/77035076/206687116-c07846f9-8b8f-43f6-bd7b-2109c09c9bc6.mp4
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
