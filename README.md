@@ -12,9 +12,7 @@
 # Turing Trust Scanner
 This project was started by Cole Hennig. This application originally aimed to help automate the process of uploading asset information to a google sheet that helps keep track of who worked on which assests and what action each asset needs next. The goal for the application was to have easy to fill in text fields with shortcut buttons and a way to scan asset number barcodes for the asset field. The application will then be able to upload that information to a google sheet. With the current build, this has all been successfully completed. 
 
-The android build can be downloaded [here](https://expo.dev/accounts/coleslaw827/projects/TuringTrustScanner/builds/a18c436a-b482-4fda-8d7a-e01c121453d0).
-
-The google sheet can be viewed [here](https://docs.google.com/spreadsheets/d/1zx6BpqGzlpRcvCFa2aXj33DpIiRUnghivoB7MRDxMpg/edit?usp=sharing). You can find the code to the apps scirpt program that handles the requests being sent from the app and adds the information to the spreadsheet. If the apps script program is editted a new deployment must be created and the deployment URL must be added in the source code in the [EntryPage.js](./pages/EntryPage.js). The URL for the variable `googleScriptUrl` must be changed to the new deployment URL.
+The latest android build can be downloaded [here](https://expo.dev/accounts/coleslaw827/projects/TuringTrustScanner/builds/c5d6cd36-7520-46f9-bb8d-e6d4f7a737b6).
 
 Hopefully this can be of help to understand what is needed and how we can build from here.
 
@@ -40,6 +38,7 @@ Below you'll find information about performing common tasks.
   * [expo start](#expo-start)
   * [npm run android](#npm-run-android)
   * [eas build](#eas-build)
+* [Google Apps Script Backend](#google-apps-script-backend)
 * [Dependencies](#dependencies)
 * [Environment Variables](#environment-variables)
   * [Configuring Packager IP Address](#configuring-packager-ip-address)
@@ -102,6 +101,17 @@ This script is necessary for deploying the current build of the app to the [Expo
 ```
 eas build -p android --clear-cache --profile preview
 ```
+
+## Google Apps Script Backend
+
+The code for the Apps Script program can be found [here](./backend.js). This file can be attached to any Google Sheet by going to **Extensions** &rarr **Apps Script** and copy and paste into the editor. Then the file will need to be saved and deployed. The deployment link created will need to added to [EntryPage.js](./pages/EntryPage.js).
+
+**Line 38**
+```javascript
+const googleScriptUrl = '...';
+```
+
+If the Apps Script program is ever editted, a new deployment must be created and then the version must be updated on the original deployment by clicking **Deploy** &rarr **Manage deployments** &rarr **Original Deployment** &rarr **Edit Pencil** &rarr **Version dropdown menu**.
 
 ## Dependencies
 

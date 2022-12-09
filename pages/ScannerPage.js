@@ -34,6 +34,8 @@ export default function App() {
   //-------------------------------------------------------------------------//
   // Sets scanned state to true and navigates back to the Entry Page with
   // the scanned asset number.
+  // Makes sure the information scanned is 8 characters long for only asset 
+  // numbers.
   //=========================================================================//
   const handleBarCodeScanned = ({ type, data }) => {
     if (data.length == 8) {
