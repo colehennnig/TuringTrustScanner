@@ -59,14 +59,14 @@ Open it in the [Expo app](https://expo.io) on your phone to view it. It will rel
 
 Sometimes the Expo app will fail to connect to the metro server. A fix that is usually very reliable is running `expo start` with the `--tunnel` flag.
 
-```
-expo start --tunnel
+```console
+$ expo start --tunnel
 ```
 
 Sometimes you may need to reset or clear the React Native packager's cache. To do so, you can pass the `--reset-cache` flag to the start script:
 
-```
-expo start --reset-cache
+```console
+$ expo start --reset-cache
 ```
 
 ####  `npm run android`
@@ -91,8 +91,8 @@ Like `npm start`, but also attempts to open your app on a connected Android devi
 
 This script is necessary for deploying the current build of the app to the [Expo Dev Site](https://expo.dev/). This does require logging into the account where you want the app being built. Once the app is built on the site it can be downloaded as an apk file and ran on any android. It will also present a qr code that can be scanned on any device to dowload the apk.
 
-```
-eas build -p android --clear-cache --profile preview
+```console
+$ eas build -p android --clear-cache --profile preview
 ```
 
 ## Google Apps Script Backend
@@ -110,8 +110,8 @@ If the Apps Script program is ever editted, a new deployment must be created and
 
 Install by running:
 
-```
-npm install <package name>
+```console
+$ npm install <package name>
 ```
 
  * `@react-native-async-storage/async-storage`
