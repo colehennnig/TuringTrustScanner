@@ -18,7 +18,7 @@ Hopefully this can be of help to understand what is needed and how we can build 
 
 Here is a video of the app in use.
 
-https://rr2---sn-aigzrn7d.c.drive.google.com/videoplayback?expire=1670597103&ei=rxGTY-vwOdfvu7APzqa8eA&ip=217.155.54.120&cp=QVRMUkZfVlFORFhPOnlUTjlCc1pqVjhyUXJZR0tobVBHWTRjdTBYdWlYQ0N3WXRfNWhDb0lJaGI&id=9bd724881d1a8357&itag=37&source=webdrive&requiressl=yes&mh=3t&mm=32&mn=sn-aigzrn7d&ms=su&mv=m&mvi=2&pl=19&ttl=transient&susc=dr&driveid=10mweTHgoytkaazLSlJTk53jBgU9jTHn0&app=explorer&mime=video/mp4&vprv=1&prv=1&dur=108.483&lmt=1670539798458428&mt=1670582202&subapp=DRIVE_WEB_FILE_VIEWER&txp=0011224&sparams=expire,ei,ip,cp,id,itag,source,requiressl,ttl,susc,driveid,app,mime,vprv,prv,dur,lmt&sig=AOq0QJ8wRgIhAJ8SZD7FMNUwYc00e0MlSS3gIlYEGJRdYcuHfpYqJOoPAiEArS1uCaBVzVAb-R4GnRU3piA1u3z3q6CU1rlbAIlA8P0=&lsparams=mh,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIgWtdSl8RKq7cgic4Odd_vNleuW7zFml1RKiAskNG0Sk0CIQC5XDnksay7l2Bq__lhmtWUZdmcOgXfWD_FqbKgMV5aaQ==&cpn=f1xkCltcS0xPIi-h&c=WEB_EMBEDDED_PLAYER&cver=1.20221206.01.00.mov
+
 
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
