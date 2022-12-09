@@ -104,14 +104,14 @@ eas build -p android --clear-cache --profile preview
 
 ## Google Apps Script Backend
 
-The code for the Apps Script program can be found [here](./backend.js). This file can be attached to any Google Sheet by going to **Extensions** &rarr **Apps Script** and copy and paste into the editor. Then the file will need to be saved and deployed. The deployment link created will need to added to [EntryPage.js](./pages/EntryPage.js).
+The code for the Apps Script program can be found [here](./backend.js). This file can be attached to any Google Sheet by going to **Extensions** &rarr; **Apps Script** and copy and paste into the editor. Then the file will need to be saved and deployed. The deployment link created will need to added to [EntryPage.js](./pages/EntryPage.js).
 
-**Line 38**
+**EntryPage.js: Line 38**
 ```javascript
 const googleScriptUrl = '...';
 ```
 
-If the Apps Script program is ever editted, a new deployment must be created and then the version must be updated on the original deployment by clicking **Deploy** &rarr **Manage deployments** &rarr **Original Deployment** &rarr **Edit Pencil** &rarr **Version dropdown menu**.
+If the Apps Script program is ever editted, a new deployment must be created and then the version must be updated on the original deployment by clicking **Deploy** &rarr; **Manage deployments** &rarr; **Original Deployment** &rarr; **Edit Pencil** &rarr; **Version dropdown menu**.
 
 ## Dependencies
 
