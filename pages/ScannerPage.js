@@ -65,16 +65,9 @@ export default function App() {
       <BarCodeScanner
         onBarCodeScanned={scanned ? undefined : handleBarCodeScanned}
         style={[StyleSheet.absoluteFillObject, styles.container]}>
-        {/* <Text style={styles.description}>Scan Asset Number</Text>
-        <View
-          style={styles.qr}
-        /> */}
-        
         <Image source={require('../assets/Scan.png')} style={{width: width, height: height, position: 'absolute'}}/>
       </BarCodeScanner>
-      <Text onPress={() => navigation.navigate("Entry", {asset: ""})} style={styles.cancel}>
-          Cancel
-        </Text>
+      <Text onPress={() => navigation.navigate("Entry", {asset: ""})} style={styles.cancel}>Cancel</Text>
       {scanned && (
         <Button title={'Tap to Scan Again'} onPress={() => setScanned(false)} />
       )}
