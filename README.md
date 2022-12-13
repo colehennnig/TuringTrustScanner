@@ -26,9 +26,15 @@ Below you'll find information about performing common tasks.
 
 ##  Table of Contents
 
+* [Workspace Setup](#workspace-setup)
+  * [npm](#npm)
+  * [nodejs](#nodejs)
+  * [npx](#npx)
+  * [Expo Go App](#expo-go-app)
+  * [eas-cli](#eas-cli)
 * [Updating to New Releases](#updating-to-new-releases)
 * [Available Scripts](#available-scripts)
-  * [expo start](#expo-start)
+  * [npx expo start](#expo-start)
   * [npm run android](#npm-run-android)
   * [eas build](#eas-build)
 * [Google Apps Script Backend](#google-apps-script-backend)
@@ -41,6 +47,63 @@ Below you'll find information about performing common tasks.
   * [iOS Simulator won't open](#ios-simulator-wont-open)
   * [QR Code does not scan](#qr-code-does-not-scan)
 
+## Workspace Setup
+
+For the development workspace, downloading these command line tools are necessary and convenient for fast and efficient development.
+
+### npm
+
+**npm** is a package manager for the JavaScript programming language maintained by npm, Inc. **npm** is the default package manager for the JavaScript runtime environment Node.js. It consists of a command line client, also called **npm**, and an online database of public and paid-for private packages, called the npm registry.
+
+To install it, run the command:
+```console
+$ sudo apt install npm
+```
+
+### nodejs
+
+**Node.js** is an open-source server environment. Node.js is cross-platform and runs on Windows, Linux, Unix, and macOS. Node.js is a back-end JavaScript runtime environment. Node.js runs on the V8 JavaScript Engine and executes JavaScript code outside a web browser.
+
+To install it, run the command:
+```console
+$ sudo apt install nodejs
+```
+
+### npx
+
+**npx** is a tool intended to help round out the experience of using packages from the npm registry — the same way npm makes it super easy to install and manage dependencies hosted on the registry, npx makes it easy to use CLI tools and other executables hosted on the registry. It greatly simplifies a number of things that, until now, required a bit of ceremony to do with plain npm.
+
+To install it, run the command:
+```console
+$ npm i -g npx
+```
+
+### Expo Go App
+
+Expo Go is a free, open-source client for running React Native apps on Android and iOS without needing to build anything locally. It is available on the App Store and Google Play. With Expo Go, you can run your projects on your own device faster than ever, and share those projects across your whole team without the need for addition code signing.
+
+Expo Go is a native app that is installed on your device. When you run [```npx expo start```](#npx-expo-start) in your project, Expo CLI starts a development server and generates a QR code. You can then open the Expo Go app on your device and scan the QR code to connect to the dev server.
+
+I have found this tool extremely helpful and convenient for development. It allows for realtime updates and the ability to simultaneously run the app on an Android and iPhone to make sure the app runs identically on both.
+
+Full documentation can be found [here](https://docs.expo.dev/workflow/expo-go/).
+
+### eas-cli
+
+EAS CLI is the command-line app that you will use to interact with EAS (Expo Application Services) services from your terminal. An account for these services can be made [here](https://expo.dev/eas) for free.
+
+To install it, run the command:
+```console
+$ npm i -g eas-cli
+```
+
+Next you will need to log in using this command:
+```console
+$ eas login
+```
+
+Further documentation on Expo Application Services can be found [here](https://docs.expo.dev/eas/) and my specific instructions and command for building an internal distribution can be found in the [eas build section](#eas-build) of this README.
+
 ##  Updating to New Releases
 
 You should only need to update the global installation of `create-react-native-app` very rarely, ideally never.
@@ -51,7 +114,7 @@ Upgrading to a new version of React Native requires updating the `react-native`,
 
 ##  Available Scripts
 
-###  `expo start`
+###  `npx expo start`
 
 Runs your app in development mode.
 
@@ -60,13 +123,13 @@ Open it in the [Expo app](https://expo.io) on your phone to view it. It will rel
 Sometimes the Expo app will fail to connect to the metro server. A fix that is usually very reliable is running `expo start` with the `--tunnel` flag.
 
 ```console
-$ expo start --tunnel
+$ npx expo start --tunnel
 ```
 
 Sometimes you may need to reset or clear the React Native packager's cache. To do so, you can pass the `--reset-cache` flag to the start script:
 
 ```console
-$ expo start --reset-cache
+$ npx expo start --reset-cache
 ```
 
 ####  `npm run android`
